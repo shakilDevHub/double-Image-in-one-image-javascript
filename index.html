@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <img src="img/person.jpg" alt="">
+        <div class="imgWrapper">
+            <img src="img/person.jpg" alt="">
+        </div>
+        <input type="range" name="" id="rangeBtn" min="0" max="100" value="50">
+    </div>
+
+    <script>
+        let wrapper = document.querySelector(".wrapper");
+        let imgWrapper = document.querySelector(".imgWrapper");
+        let secondImg = document.querySelector(".imgWrapper img");
+        let rangeBtn = document.querySelector("#rangeBtn");
+
+        
+        let wrapperWidth = wrapper.clientWidth;
+        secondImg.style.width = `${wrapperWidth}px`;
+
+        let rangeValue;
+        
+        rangeBtn.addEventListener("input", customEvent)
+        customEvent();
+        function customEvent(){
+            rangeValue = rangeBtn.value;
+            imgWrapper.style.width = `${rangeValue}%`;
+        }
+    </script>
+</body>
+</html>
